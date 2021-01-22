@@ -20,8 +20,13 @@ internal class BankServiceTest {
 
         // when
         bankService.getBanks();
-
         // then
-        verify(exactly = 1 ) { dataSource.retrieveBanks() }
+        verify(exactly = 1) { dataSource.retrieveBanks() }
     }
 }
+
+/*
+ * https://javacan.tistory.com/entry/kotlin-mock-framework-mockk-intro
+ * mockk(relaxed = true) 과 every { dataSource.retrieveBanks() } returns emptyList() 는 같다.
+ * verify(exactly = 1) { dataSource.retrieveBanks() } : dataSource 에서의 호출여부를 확인 ?
+ */
